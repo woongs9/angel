@@ -20,7 +20,7 @@
 <body>
 
 <div class="mainMap" id="map">
-    <tbody th:each="dto, state : ${list}">
+    <tbody th:each="dto : ${list}">
     <td>[[${dto.toiletNum}]]</td>
     </tbody>
     <div class="overlay"></div>
