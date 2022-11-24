@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+
+.mainMap{
+    width: 100%;
+    height: 100vh;
+
+
+}
+
+.searchBar{
+    position: absolute;
+    z-index: 3;
+    width: 90%;
+    height: 50px;
+    min-height: 10px;
+    background: rgba(255,255,255,0.6) ;
+    box-shadow: 5px 5px 10px 5px gray;
+    border-radius:20px;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display:table;
+
+}
+
+.cell{
+    display: table-cell;
+
+}
+.listPlace{
+    width: 50px;
+
+}
+.listIcon{
+    cursor: pointer;
+    font-size: 40px;
+    --ionicon-stroke-width: 60px;
+    position: absolute;
+    left: 10px;
+
+}
+
+
+.namePlace{
+    height: 100%;
+}
+
+.listPage{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    height: 60%;
+    width: 50%;
+    z-index: 4;
+    top: -100%;
+    left: 5%;
+    transition: all .5s ease-in-out;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px 5px gray;
+}
+
+.listPage.active{
+    top: 90px;
+}
+
+
+.navigation{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -90%;
+}
+.bottomMenuToggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    transform: translateY(30px);
+    transition: transform 0.5s
+}
+.bottomMenuToggle::before{
+    content: '+';
+    position: absolute;
+    font-size: 3em;
+    color: #fff;
+    transition: 1.5s;
+    color: rgba(0,0,0, 0.7);
+
+}
+.bottomMenuToggle.active:before{
+    transform: rotate(225deg);
+    transition: 1.5s;
+}
+.bottomMenu{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 70px;
+    z-index: 2;
+    box-shadow: 5px 5px 10px 5px gray;
+    background: rgba(255,255,255,0.6) ;
+    transform: translateY(30px);
+    transition: transform 0.5s, width 0.5s, height 0.5s;
+    transition-delay: 1s, 0.5s, 0.5s;
+}
+
+.bottomMenuToggle.active ~ .bottomMenu{
+    width: 360px;
+    height: 60px;
+    transform: translateY(0px);
+    transition-delay: 0s, 0.5s, 0.5s;
+    z-index: 5;
+}
+
+.bottomMenuToggle.active{
+    width: 60px;
+    height: 60px;
+    z-index: 6;
+}
+
+
+.bottomMenu ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    line-height: 80px;
+}
+.bottomMenu ul li {
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+    transition-delay: 0s;
+    transform: translateY(30px);
+}
+
+.bottomMenuToggle.active ~ .bottomMenu ul li{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .75s;
+    transform: translateY(0px);
+}
+.bottomMenu ul li:nth-child(3){
+    width: 30px;
+}
+
+.bottomMenu ul li div {
+    display: block;
+    font-size: 2em;
+    text-decoration: none;
+    color: #555;
+    --ionicon-stroke-width: 60px;
+    cursor: pointer;
+}
+
+
+
+.firstPage{
+    width:70%;
+    height: 70%;
+    position: fixed;
+    z-index: 5;
+    background: #fff;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+    border-radius:20px;
+    box-shadow: 5px 5px 10px 5px gray;
+}
+
+.firstPage.active{
+    top: 50%;
+}
+
+.secondPage{
+    width:70%;
+    height: 70%;
+    position: fixed;
+    z-index: 5;
+    background: #fff;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+    border-radius:20px;
+    box-shadow: 5px 5px 10px 5px gray;
+}
+
+.secondPage.active{
+    top: 50%;
+}
+
+.thirdPage{
+    width:70%;
+    height: 70%;
+    position: fixed;
+    z-index: 5;
+    background: #fff;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+    border-radius:20px;
+    box-shadow: 5px 5px 10px 5px gray;
+}
+
+.thirdPage.active{
+    top: 50%;
+}
+
+
+.fourthPage{
+    width:70%;
+    height: 70%;
+    position: fixed;
+    z-index: 5;
+    background: #fff;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease-in-out;
+    border-radius:20px;
+    box-shadow: 5px 5px 10px 5px gray;
+}
+
+.fourthPage.active{
+    top: 50%;
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+        background: rgba(250, 250, 250, 0.5);
+    position: fixed;
+    display: none;
+}
+
+.overlay.active{
+    display: block;
+    cursor: pointer;
+    z-index: 4;
+}
+
+
+.tracker {
+    position: absolute;
+    margin: -35px 0 0 -30px;
+    display: none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.icon {
+    position: absolute;
+    left: 5px;
+    top: 8.5px;
+    width: 40px;
+    height: 40px;
+    background-image: url(/image/icon.png);
+    background-size: 40px 40px;
+
+}
+
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url(/image/balloon.png);
+    background-size: 50px 50px;
+    -ms-transform-origin: 50% 28.33px;
+    -webkit-transform-origin: 50% 28.33px;
+    transform-origin: 50% 28.33px;
+}
