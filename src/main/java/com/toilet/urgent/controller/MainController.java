@@ -19,7 +19,6 @@ public class MainController {
     public String main(Toilet toilet, Model model){
         List<Toilet> toiletList = toiletService.listToilet(toilet);
         model.addAttribute("list", toiletList);
-
         return "main";
     }
 }
