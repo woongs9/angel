@@ -19,7 +19,7 @@ public class ToiletServiceImpl implements ToiletService{
     @Override
     public List<Toilet> listToilet(Toilet toilet, MypositionDto dto) {
 
-        List<Toilet> toiletList = toiletRepository.selectAllSQL();
+        List<Toilet> toiletList = toiletRepository.selectAllSQL(dto.getLat(), dto.getLon());
         System.out.println(dto.getLon());
         System.out.println(dto.getLat());
         System.out.println("---");
