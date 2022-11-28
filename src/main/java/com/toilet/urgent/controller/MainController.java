@@ -1,4 +1,5 @@
 package com.toilet.urgent.controller;
+import com.toilet.urgent.dto.MypositionDto;
 import com.toilet.urgent.entity.Toilet;
 import com.toilet.urgent.service.ToiletService;
 import com.toilet.urgent.service.ToiletServiceImpl;
@@ -22,18 +23,20 @@ public class MainController {
     @GetMapping({"/main"})
     public String main(Toilet toilet, Model model,  @RequestParam(required = false) String lat,
                        @RequestParam(required = false) String lon){
-        List<Toilet> toiletList = toiletService.listToilet(toilet);
-        System.out.println(lon);
-        System.out.println(lat);
-        System.out.println("---");
+        MypositionDto dto = new MypositionDto(lat, lon);
+        List<Toilet> toiletList = toiletService.listToilet(toilet,dto);
+
+//        System.out.println(lon);
+//        System.out.println(lat);
+//        System.out.println("---");
         model.addAttribute("list", toiletList);
         return "main";
     }
 
-    @GetMapping({"/test"})
-    public String test(Toilet toilet, Model model){
-        List<Toilet> toiletList = toiletService.listToilet(toilet);
-        model.addAttribute("list", toiletList);
-        return "test";
-    }
+//    @GetMapping({"/test"})
+//    public String test(Toilet toilet, Model model){
+//        List<Toilet> toiletList = toiletService.listToilet(toilet);
+//        model.addAttribute("list", toiletList);
+//        return "test";
+//    }
 }
