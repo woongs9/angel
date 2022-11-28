@@ -13,8 +13,21 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                 var lat = position.coords.latitude, // 위도
                 lon = position.coords.longitude; // 경도
                 var locPosition = new kakao.maps.LatLng(lat, lon);
+                $(document).ready(function () {
+                    $.ajax({
+                        url: "/main",
+                        type: 'GET',
+                        data: {
+                            lat: lat,
+                            lon: lon,
+                        },
+                        contentType: "application/x-www-form-urlencoded; charset=UTF-8;",
+                    });
+                });
             // 마커 표시합니다
             displayMarker(locPosition);
+
+
             });
 
             navigator.geolocation.getCurrentPosition(function(position) {
