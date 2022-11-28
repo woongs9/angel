@@ -138,6 +138,7 @@
     align-items: center;
     gap: 35px;
     line-height: 80px;
+    justify-content: center;
 }
 .bottomMenu ul li {
     list-style: none;
