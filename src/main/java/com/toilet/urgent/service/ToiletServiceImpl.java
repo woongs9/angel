@@ -17,7 +17,7 @@ public class ToiletServiceImpl implements ToiletService{
 
     @Override
     public List<Toilet> listToilet(Toilet toilet) {
-        List<Toilet> toiletList = toiletRepository.findAll();
+        List<Toilet> toiletList = toiletRepository.selectAllSQL();
         return toiletList;
     }
 }
