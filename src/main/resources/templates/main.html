@@ -25,6 +25,20 @@
         <div class="cell namePlace"></div>
     </div>
     <div class="listPage">
+        <table class="listTable">
+            <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">거리</th>
+            </tr>
+            </thead>
+            <tbody th:each="dto, state : ${list}">
+            <tr>
+                <td style="cursor: pointer;" th:lat="${dto.latitude}" th:lon="${dto.longitude}" th:onclick="listCenter(this.getAttribute('lat'), this.getAttribute('lon'))">[[${dto.toiletName}]]</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <div class="navigation">
         <div class="bottomMenuToggle"></div>
@@ -49,7 +63,9 @@
     <div class="firstPage"></div>
     <div class="secondPage"></div>
     <div class="thirdPage"></div>
-    <div class="fourthPage"></div>
+    <div class="fourthPage">
+        <div class="addMap" id="map1">
+    </div>
 </div>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

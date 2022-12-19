@@ -4,6 +4,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         level: 1 // 지도의 확대 레벨
     };
 
+
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
     // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
@@ -41,6 +42,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         var locPosition = new kakao.maps.LatLng(33.450701, 126.570667)
         displayMarker(locPosition);
     }
+
 
     //내 위치 마커
     function displayMarker(locPosition) {
@@ -478,3 +480,17 @@ kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
         // 지도를 클릭된 클러스터의 마커의 위치를 기준으로 확대합니다
         map.setLevel(level, {anchor: cluster.getCenter()});
     });
+
+
+
+var mapContainer = document.getElementById('map1'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(37.402054, 127.1082099),// 지도의 중심좌표
+        level: 1 // 지도의 확대 레벨
+    };
+
+//리스트목록에서 클릭시 해당 위치로 이동
+    function listCenter(lat, lon){
+        var locPosition = new kakao.maps.LatLng(lat, lon);
+        map.setCenter(locPosition);
+    }
